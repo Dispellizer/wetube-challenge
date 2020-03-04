@@ -1,0 +1,11 @@
+extends layouts/main
+include mixins/movieListBlock
+
+block content
+    h1 #{pageTitle}
+    .moveList
+        each item in movies
+            +movieListBlock({
+                title: item.title,
+                id: item.id
+            })
