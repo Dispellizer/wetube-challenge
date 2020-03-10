@@ -65,14 +65,18 @@ export const postCreate = async (req, res) => {
     body: { title, year, rating, synopsis, genres }
   } = req;
   try {
-    const newMovie = await Movie.create({
-      title,
-      year,
-      rating,
-      synopsis,
-      genres: genres.split(",")
-    });
-    res.redirect(`/${newMovie.id}`);
+    if (title.length >= 3) {
+      const newMovie = await Movie.create({
+        title,
+        year,
+        rating,
+        synopsis,
+        genres: genres.split(",")
+      });
+      res.redirect(`/${newMovie.id}`);
+    } else {
+      throw Error;
+    }
   } catch (error) {
     console.log(error);
     res.render("404", { pageTitle: "Error" });

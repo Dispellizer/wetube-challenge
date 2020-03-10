@@ -23,3 +23,6 @@ The routes you have to make are:
 9. 영화를 delete했으면 home로
 10. /search 페이지에서 나는 크거나 같게 필터링 할수 있어야 한다. ????
 11. 유튜브 영상처럼 보여야함
+
+https://fors.tistory.com/403
+MongoDB 쿼리 옵션 lt , lte , gt , gte , in , nin , not
